@@ -1,0 +1,25 @@
+{
+  "name": "335-final",
+  "version": "1.0.0",
+  "description": "Submitted by: Rose Smith (superterp) Group Members: Rose Smith (superterp), Peter Santos (pmegaterp) App Description: Allow users to find images, songs of an author, and store/retrieve the results. YouTube Video Link: https://www.youtube.com/MyAmazingAPP APIs: VideoApp (http:notrealvideoapp.what), SoundApp (http:notreadlsoundapp.what) Contact Email: superterp@notreal.address.what Deployed App Link: https://notreal.what.terpNel/myApp",
+  "homepage": "https://github.com/mihirY2K/Travel-App#readme",
+  "bugs": {
+    "url": "https://github.com/mihirY2K/Travel-App/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihirY2K/Travel-App.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1"
+  }
+}
