@@ -11,9 +11,12 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 7003; // use Render's port in production
 
 app.use(bodyParser.urlencoded({ extended: false }));
+// Serve all frontend files from the public folder
+app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.get("/", async (req, res) => {
-   res.send(`Kyle the bacon man, Mihir the dragon slayer, neil the pizza guy`);
+// Serve index.html when someone visits "/"
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 app.listen(PORT, () => {
