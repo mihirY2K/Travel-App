@@ -29,7 +29,27 @@ async function getWeather() {
             <img src="https://openweathermap.org/img/wn/${weather.icon}@2x.png">
         `;
 
+     document.getElementById("weatherReport").classList.add("showBorder");
+
 }
+
+
+function cycleColors(){
+    const colors = ["red", "blue", "green", "purple", "orange"];
+    const title = document.getElementById("Heading");
+
+    let index = 0;
+    
+    setInterval(() => {
+        title.style.color = colors[index];
+        index = (index + 1) % colors.length;
+
+    }, 1000);
+    
+
+}
+
+cycleColors();
 
 
 

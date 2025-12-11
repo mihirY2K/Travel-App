@@ -1,0 +1,20 @@
+#weatherReport {
+    background: white;
+    
+}
+.showBorder {
+     border-style: groove;
+    min-height: 100px; /* makes border visible even while empty */
+    border-color:blue ;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+#cityLabel{
+    color: black;
+}
+
+body{
+     background-color: #f5f5f5;
+    color: #333;
+}
