@@ -44,6 +44,11 @@ h2 {
 
 p {
     text-align: center;
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+
 }
 
 .inputStuff {
