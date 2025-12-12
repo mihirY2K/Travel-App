@@ -20,7 +20,7 @@ async function getWeather() {
      const first = data.list[0];
      const weather = first.weather[0];
 
-     document.getElementById("weatherReport").innerHTML = `
+     document.querySelector(".weatherReport").innerHTML = `
             <h2>${data.city.name}, ${data.city.country}</h2>
             <p><strong>${first.dt_txt}</strong></p>
             <p>Temperature: ${first.main.temp}°C</p>
@@ -29,7 +29,7 @@ async function getWeather() {
             <img src="https://openweathermap.org/img/wn/${weather.icon}@2x.png">
         `;
 
-     document.getElementById("weatherReport").classList.add("showBorder");
+     document.querySelector(".weatherReport").classList.add("showBorder");
 
 }
 
