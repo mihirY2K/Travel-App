@@ -10,15 +10,30 @@
     <div id="mainPage">
 
     <h1 id="Heading">Welcome to Travel App 3000</h1>
-    <label for="cityInput" id="cityLabel">City Name:</label>
+    <img src="images/Travel-Guy.jpg" width="500" class="travelImg"><br>
+    <h2>Our Purpose</h2>
+    <p>We at Travel App 3000 strive to help you explore! An important part of your travels
+    is knowing the weather in the places you decide to wander! That is why our program lets you
+    search for exactly that. All you gotta do is type in the city you are traveling to and then
+    BAM, we got da weather 4 u! ;) On top of dat, we also let you store your favorite travel 
+    locations on our website! When u visting that local diner 2 towns over so often
+    you know the name of every waiter, you oughta have the weather saved as a favorite for quick and
+    easy looksies! 
+    </p>
+    
+    <div class ="inputStuff">
+    <label for="cityInput" id="cityLabel">City Name: </label>
     <input type="text" id="cityInput" placeholder="Enter city name">
     <button onclick="getWeather()" id="searchBtn">Get Weather</button>
+   </div><br>
+     
 
 
-    <div id="weatherReport">
-
-    </div>
-
+    <div class="weatherReport">
+  
+    </div> 
+ <br><br>
+ <a href="/favorites" class="linkButton"> &#11088 <u>Look at your favorites!</u> &#11088 </a>
     <script src="script.js">
 </script>
 
