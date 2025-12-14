@@ -8,12 +8,13 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING);
 router.get("/favorites", async (req, res) => {
   try {
     const favorites = await Destination.find({});
+    const formattedDate = fav.createdAt.toLocaleString();
     let tableHTML = "<table border='1'>";
 
         tableHTML += "<tr>";
         tableHTML += "<th>#</th>";
         tableHTML += "<th>City Name</th>";
-        tableHTML += "<th>Most Recent</th>";
+        tableHTML += "<th>Date Created</th>";
         tableHTML += "</tr>";
 
         if (favorites.length > 0) {
@@ -21,7 +22,7 @@ router.get("/favorites", async (req, res) => {
                 tableHTML += "<tr>";
                 tableHTML += `<td>${index + 1}</td>`;
                 tableHTML += `<td>${fav.name}</td>`;
-                tableHTML += `<td>${index === favorites.length - 1 ? "index" : "-"}</td>`;
+                tableHTML += `<td>${formattedDate}</td>`;
                 tableHTML += "</tr>";
             });
         } else {

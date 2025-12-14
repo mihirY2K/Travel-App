@@ -5,7 +5,7 @@ const destSchema = new mongoose.Schema({
       type: String,
       required: true
    }
-});
+}, { timestamps: true });
 
 const destination = mongoose.model("Destination", destSchema);
 module.exports = destination;
