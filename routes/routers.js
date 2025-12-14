@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING);
 router.get("/favorites", async (req, res) => {
   try {
     const favorites = await Destination.find({});
-    const formattedDate = fav.createdAt.toLocaleString();
+   
     let tableHTML = "<table border='1'>";
 
         tableHTML += "<tr>";
@@ -21,6 +21,7 @@ router.get("/favorites", async (req, res) => {
             favorites.forEach((fav, index) => {
                 tableHTML += "<tr>";
                 tableHTML += `<td>${index + 1}</td>`;
+                const formattedDate = fav.createdAt.toLocaleString();
                 tableHTML += `<td>${fav.name}</td>`;
                 tableHTML += `<td>${formattedDate}</td>`;
                 tableHTML += "</tr>";
