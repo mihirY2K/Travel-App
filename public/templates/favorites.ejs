@@ -11,17 +11,8 @@
     <h1>Your favorite cities</h1>
     <img src="images/happyAdventure.jpg" width="450" class="travelImg"><br>
         <h2>Your most recent favorite!</h2>
-        <div class="weatherReport">
-          <h2><%- city %></h2>
-            <p><strong><%- time %></strong></p>
-            <p><%- temperature %></p>
-            <p><%- feelsLike %></p>
-            <p><%- condition %></p>
-            <%- cityWeatherImg %>
-        </div>
-        <h2>Your other favorites!</h2>
         <div>
-            <%- otherFavorites %>
+            <%- appTable %>
         </div>
         <br><br>
         <form action = "/addFavorite" method="POST">

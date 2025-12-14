@@ -4,7 +4,9 @@ const path = require("path");
 const portNumber = 7003;
 const bodyParser = require("body-parser");
 
-
+require("dotenv").config({
+  path: path.resolve(__dirname, "../.env"),
+});
 
 
 

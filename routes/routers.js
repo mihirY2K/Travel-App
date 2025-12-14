@@ -1,21 +1,57 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/favorites", (req, res) => {
-  let params = {
-    otherFavorites: "This is the spot for the list of user favorites",
-    city: "Most recently added favorite city",
-    time: "Time for most recently added favorite city",
-    temperature: "Temperature for most recently added favorite city",
-    feelsLike: "Feels like for most recently added favorite city",
-    condition: "Condition for most recently added favorite city",
-    cityWeatherImg: "Entire image tag based on condition"
-  }
-  res.render("favorites",params)
+const Destination = require("../models/destinations"); 
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGO_CONNECTION_STRING);
+
+router.get("/favorites", async (req, res) => {
+  try {
+    const favorites = await Destination.find({});
+    let tableHTML = "<table border='1'>";
+
+        tableHTML += "<tr>";
+        tableHTML += "<th>#</th>";
+        tableHTML += "<th>City Name</th>";
+        tableHTML += "<th>Most Recent</th>";
+        tableHTML += "</tr>";
+
+        if (favorites.length > 0) {
+            favorites.forEach((fav, index) => {
+                tableHTML += "<tr>";
+                tableHTML += `<td>${index + 1}</td>`;
+                tableHTML += `<td>${fav.name}</td>`;
+                tableHTML += `<td>${index === favorites.length - 1 ? "index" : "-"}</td>`;
+                tableHTML += "</tr>";
+            });
+        } else {
+            tableHTML += "<tr>";
+            tableHTML += "<td>No favorites yet</td>";
+            tableHTML += "</tr>";
+        }
+
+        tableHTML += "</table>";
+
+        res.render("favorites", { appTable: tableHTML });
+} catch (e) {
+    console.error(e);
+}
+ 
 });
 
-router.post("/addFavorite", (req, res) => {
-  res.redirect("/favorites")
+router.post("/addFavorite", async (req, res) => {
+
+
+  try {
+    const { cityName } = req.body;
+    await Destination.create({
+      name: cityName,
+   });
+   res.redirect("/favorites")
+  }catch (e) {
+    console.error(e);
+}
+ 
 }); 
 
 module.exports = router;
