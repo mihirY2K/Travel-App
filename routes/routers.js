@@ -22,7 +22,7 @@ router.get("/favorites", async (req, res) => {
                 tableHTML += "<tr>";
                 tableHTML += `<td>${index + 1}</td>`;
                 const formattedDate = fav.createdAt.toLocaleString();
-                tableHTML += `<td>${fav.name}</td>`;
+                tableHTML += `<td>${fav.name.toUpperCase()}</td>`;
                 tableHTML += `<td>${formattedDate}</td>`;
                 tableHTML += "</tr>";
             });
