@@ -4,6 +4,9 @@ const path = require("path");
 const portNumber = 7003;
 const bodyParser = require("body-parser");
 
+require("dotenv").config({
+  path: path.resolve(__dirname, "../.env"),
+});
 
 
 
@@ -16,27 +19,17 @@ app.set("view engine", "ejs");
 //app.set("views", path.resolve(__dirname, "templates"));
 app.set("views", path.join(__dirname, "..", "public", "templates"));
 
+
+const routes = require("./routers");
+
+
+app.use("/", routes);
+
 // Serve index.html when someone visits "/"
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
-app.get("/favorites", (req, res) => {
-  let params = {
-    otherFavorites: "This is the spot for the list of user favorites",
-    city: "Most recently added favorite city",
-    time: "Time for most recently added favorite city",
-    temperature: "Temperature for most recently added favorite city",
-    feelsLike: "Feels like for most recently added favorite city",
-    condition: "Condition for most recently added favorite city",
-    cityWeatherImg: "Entire image tag based on condition"
-  }
-  res.render("favorites",params)
-});
-
-app.post("/addFavorite", (req, res) => {
-  res.redirect("/favorites")
-});
 
 // Serve all frontend files from the public folder
 app.use(express.static(path.join(__dirname, "..", "public")));
