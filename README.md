@@ -1,7 +1,22 @@
-Submitted by: Rose Smith (superterp)
-Group Members: Rose Smith (superterp), Peter Santos (pmegaterp)
-App Description: Allow users to find images, songs of an author, and store/retrieve the results.
-YouTube Video Link: https://www.youtube.com/MyAmazingAPP
-APIs: VideoApp (http:notrealvideoapp.what), SoundApp (http:notreadlsoundapp.what)
-Contact Email: superterp@notreal.address.what
-Deployed App Link: https://notreal.what.terpNel/myApp
+## Project Information
+
+**Submitted by:**  
+Neil Gomes (ngomes5)
+
+**Group Members:**  
+Neil Gomes (ngomes5), Kyle Bacon (Kbacon45), Mihir Shah (Mihirsk5)
+
+**App Description:**  
+A travel weather application that allows users to search for cities and view real-time weather data using the OpenWeather API.
+
+**YouTube Video Link:**  
+https://youtu.be/GrZNYcScLsQ
+
+**APIs:**  
+OpenWeather API (https://openweathermap.org/api)
+
+**Contact Email:**  
+ngomes5@terpmail.umd.edu
+
+**Deployed App Link:**  
+https://travel-app-qd28.onrender.com
