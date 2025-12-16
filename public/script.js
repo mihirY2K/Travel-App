@@ -14,9 +14,7 @@ async function getWeather() {
     }
 
     const data = await response.json();
-     // an array of forecast data from weather API 
-
-     //extracting weather from data array 
+    
      const first = data.list[0];
      const weather = first.weather[0];
 

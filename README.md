@@ -4,7 +4,7 @@
 Neil Gomes (ngomes5)
 
 **Group Members:**  
-Neil Gomes (ngomes5), Kyle Bacon (Kbacon45), Mihir (Mihirsk5)
+Neil Gomes (ngomes5), Kyle Bacon (Kbacon45), Mihir Kulkarni(Mihirsk5)
 
 **App Description:**  
 A travel weather application that allows users to search for cities and view real-time weather data using the OpenWeather API.
